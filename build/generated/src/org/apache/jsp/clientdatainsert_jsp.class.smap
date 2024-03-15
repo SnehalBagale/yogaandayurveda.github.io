@@ -1,0 +1,12 @@
+SMAP
+clientdatainsert_jsp.java
+JSP
+*S JSP
+*F
++ 0 clientdatainsert.jsp
+clientdatainsert.jsp
+*L
+1,2:45
+4,32:48
+35,2:80
+*E

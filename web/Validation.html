@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		document.write("<font-size=20px>Welcome to Javascript");
+		
+		function validate()
+		{
+			var x=document.forms[0].elements[0].value;
+			if (x==null || x=="")
+			{
+				alert("nav tak re");
+				return false;
+			}
+			if(!(isNaN(x)))
+			{
+				alert("natk kru nko..");
+				return false;
+			}
+
+			var y=document.forms[0].elements[1].value;
+			if(y==null || y=="")
+			{
+				alert("Age tak re");
+				return false;
+			}
+
+			var p=document.forms[0].elements[2].value;
+			if(p==null || p=="")
+			{
+				document.getElementById("a").innerHTML="Gpp Password bhar re..";
+				return false;
+			}
+
+			if(p.length<8)
+			{
+				document.getElementById("a").innerHTML="Ghai lagliy ka..?";
+				return false;
+			}
+
+			var cp=document.forms[0].elements[3].value;
+			if(cp!=p)
+			{
+				document.getElementById("b").innerHTML="Brobr Password tak..";
+				return false;
+			}	
+			return true;
+		}
+	</script>
+	<style>
+		.abc{
+			font-family: Big John PRO;
+			font-size: 22px;
+		}
+	</style>
+</head>
+<body>
+	<form action="Homepage.html" onsubmit="return validate()" method="post">
+		Name:<br>
+		<input type="text" name="txtname" class="form-control abc" ><br>
+
+		Age:<br>
+		<input type="number" name="txtage" class="form-control abc"><br>
+		<!-- <input type="submit" value="submit"> -->
+
+		Password:<br>
+		<input type="password" name="txtpass" class="form-control abc" placeholder="Enter Password" ><br>
+		<p id="a" style="color:red"></p>
+
+		Confirm Password:<br>
+		<input type="password" name="txtcpass" class="form-control abc" placeholder="Re-Enter password"><br>
+		<input type="submit" value="submit">
+		<p id="b" style="color:red"></p>
+	</form>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Yoga - Customer Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Titillium+Web:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Ubuntu:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&family=Josefin+Sans:wght@100;200;300;400&family=Montserrat:wght@100;300;400;500&family=Poppins:ital,wght@0,100;0,500;0,600;1,200;1,300;1,400&family=Raleway:wght@100;300;400;500;600&family=Roboto:wght@100;300;400;500;700&family=Rubik:wght@300;400;500&family=Tangerine:wght@400;700&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    
+    
+    
+  <script type="text/javascript">
+  	function validate()
+  	{
+  		/*NAME*/
+  		var a=document.forms[0].elements[0].value;
+  		if(a==null || a=="")
+  		{
+  			document.getElementById("a").innerHTML="Enter Full Name";
+			return false;
+  		}
+
+  		if(!(isNaN(a)))
+			{
+				document.getElementById("a").innerHTML="Enter Full Name in Characters";
+				return false;
+			}
+
+  		/*Email*/
+  		var b1=document.forms[0].elements[1].value;
+  		if(b1==null || b1=="")
+  		{
+  			document.getElementById("b1").innerHTML="Enter Email";
+			return false;
+  		}
+
+  		/*PASS*/
+  		var b2=document.forms[0].elements[2].value;
+  		if(b2==null || b2=="")
+  		{
+  			document.getElementById("b2").innerHTML="Enter Password";
+			return false;
+  		}
+
+  		if(b2.length<8)
+  		{
+  			document.getElementById("b2").innerHTML="Short Password";
+			return false;	
+  		}
+
+  		/*CONF PASS*/
+  		var b3=document.forms[0].elements[3].value;
+  		if(b3==null || b3=="")
+  		{
+  			document.getElementById("b3").innerHTML="Enter Password";
+			return false;
+  		}
+
+  		if(b3.length<8)
+  		{
+  			document.getElementById("b3").innerHTML="Short Password";
+			return false;	
+  		}
+
+  		if(b3!=b2)
+  		{
+  			document.getElementById("b3").innerHTML="Password does not match";
+			return false;
+  		}
+
+  		/*Mo No*/
+  		var c1=document.forms[0].elements[4].value;
+  		if(c1==null || c1=="")
+  		{
+  			document.getElementById("c1").innerHTML="Enter Mobile Number";
+			return false;
+  		}
+
+  		if(c1.length!=10)
+  		{
+  			document.getElementById("c1").innerHTML="Enter Mobile Number correctly";
+			return false;
+  		}
+
+  		/*Aadhaar No*/
+  		var c2=document.forms[0].elements[5].value;
+  		if(c2==null || c2=="")
+  		{
+  			document.getElementById("c2").innerHTML="Enter Aadhaar Number";
+			return false;
+  		}
+
+  		if(c2.length!=12)
+  		{
+  			document.getElementById("c2").innerHTML="Enter Aadhaar Number correctly";
+			return false;
+  		}
+
+  		/*PAN No*/
+  		var c3=document.forms[0].elements[6].value;
+  		if(c3==null || c3=="")
+  		{
+  			document.getElementById("c3").innerHTML="Enter PAN Number";
+			return false;
+  		}
+
+  		if(c3.length!=10)
+  		{
+  			document.getElementById("c3").innerHTML="Enter PAN Number correctly";
+			return false;
+  		}
+
+  		/*Transcation No*/
+  		var d2=document.forms[0].elements[8].value;
+  		if(d2==null || d2=="")
+  		{
+  			document.getElementById("d2").innerHTML="Enter Transaction Id";
+			return false;
+  		}
+
+  		/*P Add*/
+  		var e1=document.forms[0].elements[10].value;
+  		if(e1==null || e1=="")
+  		{
+  			
+  			document.getElementById("e1").innerHTML="Enter Permanent Address";
+			return false;
+  		}
+
+  		//C Add
+  		var e3=document.forms[0].elements[12].value;
+  		if(e3==null || e3=="")
+  		{
+  			document.getElementById("e3").innerHTML="Enter Current Address";
+			return false;
+  		}
+  		
+  		return true;
+  	}
+
+  	function cb1()
+  	{
+  		//Checkbox
+	//var e2=document.forms[0].elements[11].checked;
+  		
+  		if( check1.checked == true)
+  		{
+  			var e3=document.forms[0].elements[10].value;
+  			document.forms[0].elements[12].value = e3;
+  		}
+  	}
+  		
+  </script>
+  <style>
+  	.row{
+  		/* color: ; */
+  		font-family: ubuntu, segoe ui;
+  		font-size: 22px;
+  		font-style: bold;
+  	}
+	body{
+		background-image: url(blue.jpg);
+		background-size: cover;
+	}
+	h1{
+		font-family: josefin sans;
+                color: #1768AE;
+                font-size: 4em;
+                margin: 3% 0;
+	}
+        
+        .btn{
+            padding: 0.5% 1%;
+            font-size: 1.5em;
+        }
+        .btn-d{
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .btn-d:hover{
+            color: #ffffff;
+        }
+        .btn-p{
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+        }
+        
+  </style>
+</head>
+<body >
+	<form action="clientdatainsert.jsp" method="post" onsubmit="return validate()">
+	<h1 align="center" class="text-primary">Customer Registration</h1>
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-11">
+			Full Name :
+		</div>
+	</div>
+
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+                    <sup> * </sup>First Name :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Middle Name :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Last Name :
+		</div>
+	</div><br>
+
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-9">
+			<input type="text" name="txtname" class="form-control">
+			<br><p id="a" style="color:red"></p>
+		</div>
+		<div class="col-lg-2">
+		</div>
+	</div>
+	
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Email :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Password :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Confirm Password :
+		</div>
+	</div><br>
+
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<input type="email" name="txtemail" class="form-control">
+		<p id="b1" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="password" name="txtpass1" class="form-control">
+		<p id="b2" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="password" name="txtpass2" class="form-control">
+		<p id="b3" style="color:red"></p>
+		</div>
+	</div><br>
+
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Mobile Number :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Aadhaar Number :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>PAN Number :
+		</div>
+	</div><br>
+	
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<input type="number" name="txtmono" class="form-control">
+			<p id="c1" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="number" name="txtano" class="form-control">
+			<p id="c2" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="text" name="txtpno" class="form-control">
+			<p id="c3" style="color:red"></p>
+		</div>
+	</div><br>
+
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Payment Type :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Transaction Id :
+		</div>
+		<div class="col-lg-3">
+			Payment Amount:
+		</div>
+	</div><br>
+
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<select name="txtpayment">
+				<option>Google Pay</option>
+				<option>Phonepe</option>
+				<option>Paytm</option>
+				<option>Amazon Pay</option>
+			</select>
+		</div>
+		<div class="col-lg-3">
+			<input type="text" name="txttransaction" class="form-control">
+			<br><p id="d2" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="number" name="txtpayamount" class="form-control" value="500" readonly placeholder="Rs.....">
+		</div>
+	</div><br>
+
+	<div class="row text-danger">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Permanent Address :
+		</div>
+		<div class="col-lg-3">
+			Same as Permanent Address :
+		</div>
+		<div class="col-lg-3">
+			<sup> * </sup>Current Address :
+		</div>
+	</div><br>
+
+	<div class="row">
+		<div class="col-lg-1">
+		</div>
+
+		<div class="col-lg-3">
+			<textarea name="txtpa"></textarea>
+			<br><p id="e1" style="color:red"></p>
+		</div>
+		<div class="col-lg-3">
+			<input type="checkbox" name="txtpass" class="form-control" id="check1" onclick="cb1()">
+		</div>
+		<div class="col-lg-3">
+			<textarea name="txtca" id="texbox1"></textarea>
+			<br><p id="e3" style="color:red"></p>
+		</div>
+	</div><br>
+
+	<div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-3">
+                <img width="50%" src="qrimg.jpg">
+		</div>
+        </div><br><Br>
+
+		<div align="center">
+			<input type="submit" value="submit" class="btn btn-p">
+			&nbsp;&nbsp;&nbsp;
+			<a href="NEWHOME.html" class="btn btn-d">Home</a>
+		</div>
+        <br><br>
+	
+</form>
+</body>
+</html>

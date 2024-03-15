@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initRl-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  
+  	.row{
+  		/* color: ; */
+  		font-family: ubuntu, segoe ui;
+  		font-size: 22px;
+  		font-style: bold;
+  	}
+	body{
+		background-image: url(blue.jpg);
+		background-size: cover;
+	}
+	h2{
+		color: white;
+		font-family:Ubuntu;
+	}
+  </style>
+
+<script type="text/javascript">
+	function validate()
+	{
+		var a=document.forms[0].elements[0].value;
+		if(a==null || a=="")
+		{
+			document.getElementById("m").innerHTML="<font color=red>Fill your full name";
+			return false;
+		}
+		var b=document.forms[0].elements[1].value;
+		if(b==null || b=="")
+		{
+			document.getElementById("n").innerHTML="<font color=red>Enter your email id";
+			return false;
+		}
+		var c=document.forms[0].elements[2].value;
+		if(c==null || c=="")
+		{
+			document.getElementById("o").innerHTML="<font color=red>Enter your password";
+			return false;
+		}
+		
+		var d=document.forms[0].elements[3].value;
+		if(d==null || d=="")
+		{
+			document.getElementById("p").innerHTML="<font color=red>Enter your conform password";
+			return false;
+		}
+		if(d!=c)
+		{
+			document.getElementById("p").innerHTML="<font color=red>password mismatch"
+			return false;
+		}
+		var e=document.forms[0].elements[4].value;
+		if(e==null || e=="")
+		{
+			document.getElementById("q").innerHTML="<font color=red>Enter your Mobile number";
+			return false;
+		}
+		if(e.length>=11 || e.length<10)
+		{
+			document.getElementById("q").innerHTML="<font color=red>Enter your valid mobile number";
+			return false;
+		}
+		var f=document.forms[0].elements[5].value;
+		if(f==null || f=="")
+		{
+			document.getElementById("r").innerHTML="<font color=red>Enter your aadhar number";
+			return false;
+		}
+		if(f.length>=13 || f.length<12)
+		{
+			document.getElementById("r").innerHTML="<font color=red>Enter your valid aadhar number";
+			return false;
+		}
+		var g=document.forms[0].elements[6].value;
+		if(g==null || g=="")
+		{
+			document.getElementById("s").innerHTML="<font color=red>Enter your PAN number";
+			return false;
+		}
+		if(g.length>=11 || g.length<10)
+		{
+			document.getElementById("s").innerHTML="<font color=red>Enter your valid PAN number";
+			return false;
+		}
+		
+		var i=document.forms[0].elements[8].value;
+		if(i==null || i=="")
+		{
+			document.getElementById("u").innerHTML="<font color=red>Enter your transaction id";
+			return false;
+		}
+		var j=document.forms[0].elements[9].value;
+		if(j==null || j=="")
+		{
+			document.getElementById("v").innerHTML="<font color=red>Enter your payment";
+			return false;
+		}
+		var k=document.forms[0].elements[10].value;
+		if(k==null || k=="")
+		{
+			document.getElementById("w").innerHTML="<font color=red>Enter your perment address";
+			return false;
+		}
+		
+        var l=document.forms[0].elements[11].value;
+		if(l!=checked)		
+		{
+			document.getElementById("x").innerHTML="<font color=red>click here";
+			return false;
+		}
+		var m=document.forms[0].elements[12].value;
+		if(m==null || m=="")
+		{
+			document.getElementById("y").innerHTML="<font color=red>Enter your current address";
+			return false;
+		}
+		return true;
+	}
+</script> 
+</head>
+<body>
+	<form action="Clientregistration.jsp" onsubmit="return validate()" method="POST">
+<div class="row">
+	<div class="col-lg-12">
+		<center><h2>Registration</h2></center><br>
+	</div>
+	
+</div>
+<div class="row">
+	<div class="col-lg-1">
+	</div>
+	<div class="col-lg-3"><sup>*</sup>
+		FirstName
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		MiddleName
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		LastName
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-1">
+	</div>
+	<div class="col-lg-9">
+		<input type="text" name="txtFname" class="form-control">
+		 <p id="m"></p>
+	</div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1">
+	</div>
+	<div class="col-lg-3"><sup>*</sup>
+		Email
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		Password
+	</div>
+	
+	<div class="col-lg-3"><sup style="color: red;">*</sup>
+		Confirm Password
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3">
+		<input type="Email" name="txtemail" class="form-control">
+		 <p id="n"></p>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Password" name="txtpassword" class="form-control">
+		<p id="o"></p>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Password" name="txtpassword" class="form-control">
+		<p id="p"></p>
+	</div>
+	<div class="col-lg-2"></div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3"><sup>*</sup>
+		Mobile Number
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		AAdhaar Number
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		PAN Number
+	</div>
+	<div class="col-lg-2"></div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3">
+		<input type="Number" name="txtnumber" class="form-control">
+		<p id="q"></p>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Number" name="txtAadhaar" class="form-control">
+		<p id="r"></p>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Number" name="txtpan" class="form-control">
+		<p id="s"></p>
+	</div>
+	<div class="col-lg-2"></div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3"><sup>*</sup>
+		 Payment Type
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		Transaction ID
+	</div>
+	
+	<div class="col-lg-3"><sup>*</sup>
+		Payment
+	</div>
+	<div class="col-lg-2"></div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3">
+		<select name="txtpayment">
+			<option value="GPay">
+				GPay
+			</option>
+			<option value="PhonePay">9
+				PhonePay
+			</option>
+			<option value="Paytem">
+				Paytem
+			</option>
+		</select>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Number" name="txtTransactionID" class="form-control">
+		<p id="u"></p>
+	</div>
+	
+	<div class="col-lg-3">
+		<input type="Number" name="txtPayment">
+		<p id="v"></p>
+	</div>
+	<div class="col-lg-2"></div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3"><sup>*</sup>
+		Perment Address
+	</div>
+	<div class="col-lg-3"><sup>*</sup>
+		Set as Perment Address
+	</div>
+	<div class="col-lg-3"><sup>*</sup>
+		Current Addreass
+	</div>
+</div><br>
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-3">
+		<input type="textarea" name="txtAddreass" class="form-control">
+		<p id="w"></p>
+	</div>
+	<div class="col-lg-3">
+		<input type="checkbox" name="txtbox" class="form-control">
+		<p id="x"></p>
+	</div>
+	<div class="col-lg-3">
+		<input type="textarea" name="txtAdd" class="form-control">
+		<p id="y"></p>
+	</div>
+</div><br>
+
+<div class="row"></div>
+<div class="row"></div>
+
+<div align="center">
+	<input type="submit" value="submit" class="btn btn-primary">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="Body.html" class="btn btn-danger">Home</a>
+</div>
+</form>
+</body>
+</html>
